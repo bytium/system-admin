@@ -5,6 +5,7 @@ echo "Compiling...."
 location=/lib/modules/`uname -r`/misc/
 
 mkdir /tmp/vmfix
+mkdir -p /lib/modules/`uname -r`/misc
 cp * /usr/lib/vmware/modules/source/* /tmp/vmfix
 cd /tmp/vmfix
 tar xvf vmmon.tar; tar xvf vmnet.tar
