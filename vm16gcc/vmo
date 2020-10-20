@@ -2,7 +2,7 @@
 
 echo "Compiling...."
 
-location=/lib/modules/`uname -r`/misc/
+location="/lib/modules/`uname -r`/misc/"
 
 mkdir /tmp/vmfix
 mkdir -p /lib/modules/`uname -r`/misc
