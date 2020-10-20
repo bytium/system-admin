@@ -1,20 +1,22 @@
 #!/usr/bin/bash
 
-echo "Compiling...."
 
 location="/lib/modules/`uname -r`/misc/"
 
 mkdir /tmp/vmfix
 mkdir -p /lib/modules/`uname -r`/misc
-cp * /usr/lib/vmware/modules/source/* /tmp/vmfix
+cp /usr/lib/vmware/modules/source/* /tmp/vmfix
 cd /tmp/vmfix
 tar xvf vmmon.tar; tar xvf vmnet.tar
 cd vmnet-only
-make
+echo "compiling and coping vmnet.ko to $location..."
+make > /dev/null 2>&1
 cp vmnet.ko $location
 cd ../vmmon-only
-make
+echo "compiling and coping vmmon.ko to $location..."
+make > /dev/null 2>&1
 cp vmmon.ko $location
+echo "Restarting vmware..."
 depmod -a
 /etc/init.d/vmware restart
 
