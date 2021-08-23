@@ -25,7 +25,7 @@ def check(target):
         text = re.sub(' +', ' ', str(soup.prettify()).replace("\n", " "))
         soup2 = BeautifulSoup(text, "html.parser")
         for pa in soup2.find_all('p'):
-            print(pa.get_text().strip("\n"))
+            print(pa.get_text())
         print("\n")
     else:
         print(r.text)
