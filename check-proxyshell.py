@@ -1,7 +1,6 @@
 import requests, os
 import argparse
 from bs4 import BeautifulSoup
-from urllib.parse import parse_qs, urlparse, unquote
 
 s = requests.session()
 parser = argparse.ArgumentParser()
