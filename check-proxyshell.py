@@ -1,4 +1,4 @@
-import requests, os
+import requests
 import argparse
 from bs4 import BeautifulSoup
 
