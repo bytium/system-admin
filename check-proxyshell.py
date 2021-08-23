@@ -22,11 +22,8 @@ def check(target):
         rr = s.get(
             "https://" + target + "/autodiscover/autodiscover.json?@test.com/mapi/nspi/?&Email=autodiscover/autodiscover.json%3F@test.com")
         soup = BeautifulSoup(rr.text, 'html.parser')
-        text = re.sub(' +', ' ', str(soup.prettify()).replace("\n", " "))
-        soup2 = BeautifulSoup(text, "html.parser")
-        for pa in soup2.find_all('p'):
-            print(pa.get_text())
-        print("\n")
+        testing = re.sub('<[^<]+?>', '', soup.prettify())
+        print(re.sub(r'\n\s*\n', '\n\n', testing))
     else:
         print(r.text)
 
