@@ -3,7 +3,7 @@ import argparse
 from bs4 import BeautifulSoup
 import re
 ###Usage:
-### python3 check-proxyshell.py --url mail.localhost.local
+### python3 is-proxyshell-vul.py --url mail.localhost.local
 
 s = requests.session()
 parser = argparse.ArgumentParser()
