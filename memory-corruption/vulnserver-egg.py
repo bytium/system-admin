@@ -1,3 +1,4 @@
+#Tutorial: https://redtm.com/docs/exploit-dev/stack-overflow-egg-hunting/
 import socket
 
 
